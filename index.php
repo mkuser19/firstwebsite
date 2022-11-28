@@ -1,4 +1,3 @@
-<?php include_once 'mysqldb.php';?>
 <!doctype html>
 <html lang="en">
   <head>
