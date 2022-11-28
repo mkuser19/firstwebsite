@@ -1,5 +1,9 @@
 
-<?php include('../../src/common/header.php'); ?>
+<?php session_start();
+include('../../src/common/header.php');
+print_r( $_SESSION["email"]);
+$emailsession= $_SESSION["email"];
+?>
 
 
 

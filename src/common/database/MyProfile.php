@@ -1,4 +1,5 @@
-<?php include '../../src/common/database/connection.php';
+<?php session_start();
+include '../../src/common/database/connection.php';
 
 class MyProfile {
 
@@ -49,10 +50,11 @@ class MyProfile {
         $sql = "SELECT Email FROM users WHERE email='$email'";
         $check_email =  $this->connection->query( $sql);
         if($check_email->fetch_row()>0){
+           $_SESSION["email"] = $email;
             header("location:../../src/client/welcome.php");
         
         }else{
-        echo "please create new account";
+           echo "please create new account";
         }
       }
 }
