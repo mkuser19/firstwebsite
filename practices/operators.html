@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function add(a,b){
+            return a&&=b;
+        }
+        const result = add(14,66);
+        console.log(result);
+    </script>
+    <script>
+        class x{
+            constructor(a,b){
+                this.a=a;
+                this.b=b;
+            }
+            add(a,b){
+                return a+b;
+            }
+        }
+        const total= new x();
+        const z = total.add(15,26);
+        console.log(z);
+
+
+    </script>
+    
+</body>
+</html>

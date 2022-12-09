@@ -57,6 +57,17 @@ class MyProfile {
            echo "please create new account";
         }
       }
+      function selectByEmailProfile($email){
+        $sql = "SELECT Email FROM users WHERE email='$email'";
+        $check_email =  $this->connection->query( $sql);
+        if($check_email->fetch_row()>0){
+           $_SESSION["email"] = $email;
+            header("location:../../src/client/welcome.php");
+        
+        }else{
+           echo "please create new account";
+        }
+      }   
 }
 
 $myProfile = new MyProfile($connection);

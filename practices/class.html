@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+ class car{
+ constructor(name,year){
+    this.name=name;
+    this.year=year;
+ }
+}
+    const newcar= new car ("Ford","2022");
+    console.log(newcar);
+    </script>
+<script>
+
+class ncar{
+ constructor(name,year){
+    this.name=name;
+    this.year=year;
+ }
+
+age() {
+    const date = new Date();
+    return date.getFullYear()-this.year;
+
+}
+}
+const mycar= new ncar("Ford","2012");
+console.log("my car is"+mycar.age()+"years old");
+</script>
+<script>
+    class x{
+        constructor (brand){
+            this.xname=brand;
+        }
+        present(){
+            return 'I have a'+this.xname;
+        }
+    }
+    class y extends x {
+        constructor (brand,model){
+            super (brand);
+            this.y = model;
+        }
+        show (){
+            return this.present()+', it is a' +this.y;
+        }
+    }
+    const z = new y ("ford","mustang");
+    console.log(z.show());
+</script>
+<script>
+    class a {
+        constructor (brand){
+            this.xname=brand;
+        }
+        get bname(){
+            return this.xname;
+        }
+        set bname(q) {
+            this.xname = q;
+        }
+    }
+const m = new a ();
+console.log(m);
+</script>
+<script>
+    class vehicle {
+        constructor (name){
+            this.name = name;
+ }
+ static hello (){
+    return "hello";
+ }
+    }
+    const myvehicle = new vehicle ("Ford");
+    myvehicle.hello()
+    console.log(vehicle.hello());
+</script>
+<script>
+    const number = [1,2,3,4,5,6];
+    console.log(number.find(e => e % 2 == 0));
+</script>
+<script> 
+const scores =[10,20,30,40,50];
+console.log(scores.indexOf(50));
+</script>
+
+</body>
+</html>
