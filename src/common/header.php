@@ -34,7 +34,7 @@
   <div class="nav-scroller py-1 mb-2">
     <nav class="nav d-flex justify-content-between">
       <a class="p-2 link-secondary" href="welcome.php">Home</a>
-      <a class="p-2 link-secondary" href="#">My Profile</a>
+      <a class="p-2 link-secondary" href="myprofile.php">My Profile</a>
       <a class="p-2 link-secondary" href="#">About Us</a>
       <a class="p-2 link-secondary" href="#">Contact Us</a>
     </nav>
