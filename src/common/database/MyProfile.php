@@ -37,17 +37,30 @@ class MyProfile {
         }
       }*/
 
-     /* function updateProfile(){
-        $sql = "DELETE FROM users WHERE id=1";
-        if ($conn->query($sql) === TRUE) {
-           echo "Record deleted successfully";
+      function updateProfile($email,$Firstname){
+        $sessionemail=$_SESSION['email'];
+        $Firstname=$_SESSION['Firstname'];
+      echo $sql = "UPDATE users SET email ='$email',Firstname='$Firstname' WHERE email ='$sessionemail' ";
+      echo $result= $this->connection->query( $sql);
+      echo $count=$result->num_rows;
+      
+      if($result){
+      if ( $result->num_rows >0) {
+      # echo "inside if condition";
+     $_SESSION['email']=$email;
+      header("location:../../src/client/myprofile.php");  
         } else {
-          echo "Error deleting record: " . $conn->error;
+        /*  echo "error";
+          die;*/
+          $_SESSION['error']="Error updating record: ";
+          $_SESSION['email']="";
+          header("location:../../index.php"); 
         }
-      }*/
+      }
+    }
 
-      function selectByEmailProfile($email){
-        $sql = "SELECT Email FROM users WHERE email='$email'";
+      function selectByEmailProfile($email,$password){
+        $sql = "SELECT Email FROM users WHERE email='$email' AND pwd='$password'";
         $check_email =  $this->connection->query( $sql);
         if($check_email->fetch_row()>0){
            $_SESSION["email"] = $email;
@@ -57,17 +70,17 @@ class MyProfile {
            echo "please create new account";
         }
       }
-      function selectByEmailProfile($email){
+      function GetEmail($email){
         $sql = "SELECT Email FROM users WHERE email='$email'";
         $check_email =  $this->connection->query( $sql);
         if($check_email->fetch_row()>0){
-           $_SESSION["email"] = $email;
-            header("location:../../src/client/welcome.php");
+           return $email;
+            
         
         }else{
            echo "please create new account";
         }
-      }   
+      }
 }
 
 $myProfile = new MyProfile($connection);
